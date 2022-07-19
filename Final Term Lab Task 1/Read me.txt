@@ -1,0 +1,3 @@
+sql query is written in userModel.php
+username -> [admin]
+password -> [admin123]
