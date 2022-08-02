@@ -1,0 +1,1 @@
+Java Script applied in (Project/view/AdminLogin.php)

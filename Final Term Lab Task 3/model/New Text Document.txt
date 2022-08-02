@@ -1,0 +1,31 @@
+<?php 
+    require_once "db.php";
+
+    function addpatient($name,$admission,$release,$adoc,$status)
+    {
+        $conn = getConnection();
+        $sql = "insert into Patient values('{$name['Name']}','{$admission['Admission_Date']}','{$release['Release_Date']}','{$adoc['Assigned_Doctor']}','{$status['Status']}')";
+        $result = mysqli_query($conn, $sql);
+    }
+
+?>
+
+
+
+<?php 
+    require_once "../model/addPatientModel.php";
+
+    $name = $_POST['p_name'];
+    $admission = $_POST['ad_date'];
+    $release = $_POST['rl_date'];
+    $adoc = $_POST['as_doc'];
+    $status = $_POST['stt'];
+
+    if(isset($_POST['submit'])){
+    addpatient($name,$admission,$release,$adoc,$status);
+    header('location: ../view/add_patient.php');
+    }else{
+        echo "error";
+    }
+
+?>
